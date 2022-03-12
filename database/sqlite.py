@@ -19,6 +19,9 @@ class DB_SQLite:
         """Destructor for SQLite connection. Closes existing connection."""
         self.connection.close()
 
+    def init_db(self):
+        pass
+
     def get_project(self, id):
         """Tries to fetch project with given id. Throws exception if project doesn't exist."""
         pass
