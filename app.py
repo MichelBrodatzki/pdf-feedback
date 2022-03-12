@@ -31,6 +31,6 @@ def main():
     http_server.serve_forever()
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.WARNING)
+    logging.basicConfig(level=logging.INFO)
 
     main()
