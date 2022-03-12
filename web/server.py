@@ -1,8 +1,10 @@
 import os
-import sys
 from flask import Flask, g
 
 from database.sqlite import DB_SQLite
+
+import web.frontend
+import web.api
 
 def create_app():
     # Setup Flask
@@ -19,5 +21,9 @@ def create_app():
             pass
         else:
             pass
+
+    # Register front- and backend handlers
+    app.register_blueprint(web.frontend.bp)
+    app.register_blueprint(web.api.bp)
 
     return app
