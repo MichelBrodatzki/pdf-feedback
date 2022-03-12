@@ -1,7 +1,7 @@
 import os
 import sqlite3
 
-import log_util
+import logging
 
 class DB_SQLite:
     """Class for pdf-feedback SQLite connections"""
@@ -11,7 +11,7 @@ class DB_SQLite:
         """Contructor for SQLite connection. Opens connection to path specified in .env file."""
         # Uses path from .env. Falls back on "db.sqlite"
         # TODO (Brodi): Add warning log, if SQLITE_PATH isn't set.
-        log_util.log ("Opening sqlite database ...")
+        logging.info ("Opening sqlite database ...")
         db_path = os.getenv("SQLITE_PATH") or "db.sqlite"
         self.connection = sqlite3.connect(db_path)
 
